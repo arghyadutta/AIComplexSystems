@@ -7,7 +7,7 @@
 
 ## Reading list 
 
-I am making a list of references (papers, book chapters, videos,…)—please read/watch them. While they may not be essential for exams, they are informative, well written, and persuasive.
+I am making a list of references (papers, book chapters, videos,…)—please read/watch them. While they may not be essential for exams, they are informative, well-written, and persuasive.
 
 - [Reading materials](https://arghyadutta.github.io/teaching/AIComplex.html)
 
@@ -17,3 +17,5 @@ Codes are often adapted from the following repositories. Please check the source
 
 - [Müller and Guido's GitHub Repo accompanying their book](https://github.com/amueller/introduction_to_ml_with_python)
 - [GitHub repo for a ML course by Joaquin Vanschoren](https://github.com/ml-course/master)
+
+Git example.
