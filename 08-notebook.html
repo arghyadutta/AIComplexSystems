@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>07-notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>08-notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7516,32 +7517,24 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Similarity-between-two-clusters">Similarity between two clusters<a class="anchor-link" href="#Similarity-between-two-clusters">¶</a></h1><ul>
-<li><p>Compared to supervised classification algorithms, evaluating quality of two partitions of the same data is harder.</p>
-</li>
-<li><p>This is often done in two ways:</p>
-<ul>
-<li><ol>
-<li>comparing how well the predicted cluster matches with the ground truth and</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>checking if the generated clusters are consistent.</li>
-</ol>
-</li>
+<h1 id="Complex-Systems">Complex Systems<a class="anchor-link" href="#Complex-Systems">¶</a></h1><ul>
+<li>Complex systems comprise many interacting components and they show emergent behavior that are not predictable from studying the individual components.</li>
+<li>"A system is complex if its behavior crucially depends on the details of the system....although a system is complex, it is still possible to get predictions for its behavior, but these predictions will be now of a probabilistic nature." (Giorgio Parisi, 2021 Nobel Prize in Physics)</li>
+<li>Examples:<ul>
+<li>Weather and climate systems</li>
+<li>Biological ecosystems</li>
+<li>Neural networks and brain dynamics</li>
+<li>Social and economic networks</li>
 </ul>
 </li>
-<li><p>The second approach is useful in case there are no available ground truths.</p>
-</li>
-<li><p>See <a href="https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation">Scikit-learn's documentation</a> for a detailed discussion.</p>
-</li>
-<li><p><em>Measures that don’t need a ground truth</em>: Silhouette Coefficient, Calinski–Harabasz Index, Davies–Bouldin Index</p>
-</li>
-<li><p><em>Measures that need ground truth</em>: Homogeneity Score, Completeness Score, V Measure</p>
+<li>References:<ul>
+<li>Mitchell, M. (2009). Complexity: A guided tour. Oxford University Press.</li>
+<li>Parisi, G. (2002). Complex Systems: A Physicist’s Viewpoint (No. arXiv:cond-mat/0205297). arXiv. <a href="https://doi.org/10.48550/arXiv.cond-mat/0205297">https://doi.org/10.48550/arXiv.cond-mat/0205297</a></li>
+<li>Grinstead, C. M., &amp; Snell, J. L. (2006). Introduction to Probability. American Mathematical Society. <a href="https://math.dartmouth.edu/~prob/prob/prob.pdf">https://math.dartmouth.edu/~prob/prob/prob.pdf</a></li>
+<li>Bianconi, G., Arenas, A., Biamonte, J., Carr, L. D., Kahng, B., Kertesz, J., Kurths, J., Lü, L., Masoller, C., Motter, A. E., Perc, M., Radicchi, F., Ramaswamy, R., Rodrigues, F. A., Sales-Pardo, M., San Miguel, M., Thurner, S., &amp; Yasseri, T. (2023). Complex systems in the spotlight: Next steps after the 2021 Nobel Prize in Physics. Journal of Physics: Complexity, 4(1), 010201. <a href="https://doi.org/10.1088/2632-072X/ac7f75">https://doi.org/10.1088/2632-072X/ac7f75</a></li>
+</ul>
 </li>
 </ul>
-<p>In this notebook, I will show few comparison indices and their limitations.</p>
-<p><img alt="" src="./images/pair-confusion.png"/></p>
 </div>
 </div>
 </div>
@@ -7552,7 +7545,279 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="One-way-is-to-compute-the-pair-confusion-matrix">One way is to compute the <em>pair</em>-confusion matrix<a class="anchor-link" href="#One-way-is-to-compute-the-pair-confusion-matrix">¶</a></h2>
+<p><img alt="" src="images/Complex_systems_organizational_map.jpg"/></p>
+<p><a href="https://en.wikipedia.org/wiki/Complex_system">Source: Wikipeida</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Characteristics-of-Complex-Systems">Characteristics of Complex Systems<a class="anchor-link" href="#Characteristics-of-Complex-Systems">¶</a></h2><ul>
+<li>Nonlinearity: Small changes can lead to large effects.</li>
+<li>Emergence: Global behavior arises from local interactions.</li>
+<li>Self-organization: Systems evolve into structured patterns without external control.</li>
+<li>Phase transitions: Systems undergo qualitative shifts under certain conditions.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Examples-of-Complex-Systems-from-Birds-and-Fish">Examples of Complex Systems from Birds and Fish<a class="anchor-link" href="#Examples-of-Complex-Systems-from-Birds-and-Fish">¶</a></h2><ul>
+<li>Flocking behavior in birds is a classic example of a complex system.</li>
+<li>Individual birds follow simple rules:<ul>
+<li>Alignment: Steer towards the average heading of neighbors.</li>
+<li>Cohesion: Move towards the average position of neighbors.</li>
+<li>Separation: Avoid crowding neighbors.</li>
+</ul>
+</li>
+<li>These simple interactions lead to complex, coordinated group movements.</li>
+</ul>
+<p>See this astounding video! (<a href="https://www.youtube.com/watch?v=UVko9jyAkQg">https://www.youtube.com/watch?v=eakKfY5aHmY</a>)</p>
+<ul>
+<li>Individual fish adhere to similar simple rules as flocking birds, resulting in: enhanced predator avoidance and improved foraging efficiency.</li>
+<li>The collective behavior emerges without a central leader!</li>
+<li><a href="https://www.youtube.com/watch?v=15B8qN9dre4">Fish schooling</a></li>
+<li>And a <a href="https://vetemaa.github.io/fish-simulation/">simulation of the phenomena</a>, check it!</li>
+</ul>
+<p><img alt="Algorithm" src="images/fish.png"/></p>
+<ul>
+<li><a href="https://comserv.cs.ut.ee/ati_thesis/datasheet.php?id=69758&amp;year=2020">Figure source</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Modeling-Complex-Systems">Modeling Complex Systems<a class="anchor-link" href="#Modeling-Complex-Systems">¶</a></h2><ul>
+<li>Common modeling approaches:<ul>
+<li>Cellular automata (e.g., Conway’s Game of Life)</li>
+<li>Network theory (e.g., social network dynamics)</li>
+<li>Agent-based models (e.g., flocking behavior in birds)</li>
+<li>Statistical physics (e.g., Ising model for magnetism)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Emergent-Behavior-in-the-Ising-Model">Emergent Behavior in the Ising Model<a class="anchor-link" href="#Emergent-Behavior-in-the-Ising-Model">¶</a></h2><ul>
+<li>Below critical temperature: Spins align, resulting in global magnetization.</li>
+<li>Above critical temperature: Spins are disordered, leading to random behavior.</li>
+<li>Near critical temperature: The system shows criticality with long-range correlations.</li>
+<li>The Ising model demonstrates self-organization: Without an external field, spins form ordered structures.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=kjwKgpQ-l1s">YouTube: Ising Model Simulation</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Ising-Model">The Ising Model<a class="anchor-link" href="#The-Ising-Model">¶</a></h2><ul>
+<li>A mathematical model used in statistical mechanics to study phase transitions.</li>
+<li>Proposed by Wilhelm Lenz and further developed by Ernst Ising in 1925.</li>
+<li>Describes a system of discrete spin variables arranged on a lattice.</li>
+<li>Spins interact with nearest neighbors, leading to emergent patterns.</li>
+<li>Imagine a lattice of tiny atomic magnets—spins—that interact with their neighbors.</li>
+<li>Or think about a binary decision-making process: each spin is like a person choosing between two options, influenced by their neighbors.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Energy">Energy<a class="anchor-link" href="#Energy">¶</a></h2><ul>
+<li><p>Consider a two-dimensional square lattice where each site contains a spin variable.</p>
+</li>
+<li><p>Each spin can take values $S_i = \pm 1$.</p>
+</li>
+<li><p>Spins interact with their nearest neighbors according to an interaction strength $J$.</p>
+</li>
+<li><p>The total energy of the system is given by the Hamiltonian:</p>
+<p>$$
+H = -J \sum_{\langle i,j \rangle} S_i S_j - h \sum_i S_i
+$$</p>
+</li>
+<li><p>The first term represents spin–spin interactions, while the second term accounts for an external magnetic field $h$.</p>
+</li>
+</ul>
+<h2 id="References:">References:<a class="anchor-link" href="#References:">¶</a></h2><ul>
+<li>Taroni, A. (2015). 90 years of the Ising model. Nature Physics, 11(12), 997–997. <a href="https://doi.org/10.1038/nphys3595">https://doi.org/10.1038/nphys3595</a> (for the story)</li>
+<li>Chandler, D. (1987). Introduction to Modern Statistical Mechanics. Oxford University Press (Excellent book.)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Statistical-Mechanics">Statistical Mechanics<a class="anchor-link" href="#Statistical-Mechanics">¶</a></h2><ul>
+<li><p>The probability of a given spin configuration $S$ follows the Boltzmann distribution:</p>
+<p>$$
+P(S) = \frac{e^{-H(S) / k_{\rm B} T}}{Z}
+$$</p>
+</li>
+<li><p>The partition function $Z$ normalizes the probability distribution:</p>
+<p>$$
+Z = \sum_{\{S\}} e^{-H(S) / k_{\rm B} T}
+$$</p>
+</li>
+<li><p>Important observables derived from this formulation include the magnetization:</p>
+<p>$$
+M = \frac{1}{N} \sum_i S_i
+$$</p>
+</li>
+<li><p>And the susceptibility:</p>
+<p>$$
+\chi = \frac{1}{k_{\rm B} T} (\langle M^2 \rangle - \langle M \rangle^2)
+$$</p>
+</li>
+</ul>
+<h2 id="Phase-Transition-in-2D-Ising-Model">Phase Transition in 2D Ising Model<a class="anchor-link" href="#Phase-Transition-in-2D-Ising-Model">¶</a></h2><ul>
+<li><p>The 2D Ising model undergoes a phase transition at a critical temperature $T_c$.</p>
+</li>
+<li><p>Below $T_c$, the system exhibits spontaneous magnetization.</p>
+</li>
+<li><p>Above $T_c$, the system is in a disordered phase.</p>
+</li>
+<li><p>The exact critical temperature for a square lattice with zero external field is:</p>
+<p>$$
+T_{\rm C} = \frac{2 J}{k_{\rm B} \ln(1+\sqrt{2})}
+$$</p>
+</li>
+<li><p>This transition is an example of spontaneous symmetry breaking.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Monte-Carlo-Simulation:-Metropolis-Algorithm">Monte Carlo Simulation: Metropolis Algorithm<a class="anchor-link" href="#Monte-Carlo-Simulation:-Metropolis-Algorithm">¶</a></h2><ul>
+<li>The Ising model is typically simulated using Monte Carlo methods.</li>
+<li>The Metropolis algorithm is an efficient Markov Chain Monte Carlo (MCMC) method.</li>
+</ul>
+<h2 id="Algorithm-Steps:">Algorithm Steps:<a class="anchor-link" href="#Algorithm-Steps:">¶</a></h2><ol>
+<li><p>Select a random spin $S_i$.</p>
+</li>
+<li><p>Compute the energy change if the spin is flipped:</p>
+<p>$$
+\Delta E = 2 J S_i \sum_{\text{nn}} S_j
+$$</p>
+</li>
+<li><p>Accept the flip with probability (more in the next class)</p>
+<p>$$
+P = \min(1, e^{-\Delta E / k_{\rm B} T})
+$$</p>
+</li>
+<li><p>Iterate till equilibrium.</p>
+</li>
+</ol>
+<h2 id="References:">References:<a class="anchor-link" href="#References:">¶</a></h2><ul>
+<li><em>Really great book, if you ever want to use computational physics</em>: Böttcher, L., &amp; Herrmann, H. J. (2021). Computational Statistical Physics (1st ed.). Cambridge University Press. <a href="https://doi.org/10.1017/9781108882316">https://doi.org/10.1017/9781108882316</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Lattice size (LxL grid)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Temperature remember T_C = 2 / np.log(1+np.sqrt(2)) for J=1, kB=1</span>
+<span class="n">J</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Interaction strength</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># Number of frames in the GIF</span>
+
+<span class="c1"># Initialize lattice with random spins (-1 or +1)</span>
+<span class="n">lattice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">monte_carlo_step</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Perform one Monte Carlo step using the Metropolis algorithm.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span> <span class="o">*</span> <span class="n">L</span><span class="p">):</span>  <span class="c1"># Try flipping each spin once on average</span>
+        <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Pick a random spin</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">lattice</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+
+        <span class="c1"># Compute sum of nearest neighbors</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">lattice</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">L</span>, j] + lattice[i, (j+1)%L] +
+            <span class="n">lattice</span><span class="p">[(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">L</span>, j] + lattice[i, (j-1)%L]
+        <span class="p">)</span>
+
+        <span class="c1"># Energy change if spin is flipped</span>
+        <span class="n">dE</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">J</span> <span class="o">*</span> <span class="n">S</span> <span class="o">*</span> <span class="n">neighbors</span>
+
+        <span class="c1"># Metropolis criterion (will discuss in the next class)</span>
+        <span class="k">if</span> <span class="n">dE</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">dE</span><span class="p">):</span>
+            <span class="n">lattice</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># flip spin</span>
+
+<span class="c1"># Set up Matplotlib figure</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">monte_carlo_step</span><span class="p">(</span><span class="n">lattice</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span><span class="p">,</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">steps</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># ani.save(f"images/ising_model_T_{T}.gif", writer="pillow", fps=30)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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D5FLWK6sdcr6vNATAgBEQyMEAIiGRggAEE1u54TGCzEuaVuu1txTHmJLVcpDbDWf83m+9mqE2gflIuv+GJf3lsdnvJLWvIjLfIvNHJ3m3LhWCnvSewMAag6NEAAgmpoYjkvqhmp2d7Mem5dwLkl10BwaylrnUBlnbeQh3YItreEhl+y7oYagXeqfpNZCB4U612WIkCXaAICaQyMEAIjGuhF699135ZprrpHZs2fLrFmz5KyzzpK9e/eWXzfGyIYNG6StrU0aGhpkxYoVsn//ftVKAwCODFZzQh9++KGcf/758o1vfEN+/etfy5w5c+Tvf/+7fPnLXy4fc//998uWLVvk4YcfllNOOUU2btwoF110kRw4cEAaGxudK+wyRhkrXEWoJam+0pO7zJ1lHSPXDCFjs7w+1PyeL77mDV34CncUat42rSyt69gsu7YRKnxZ1iXadcbiKmvXrpXf//738uKLL05biba2Nunu7pY1a9aIiMjo6Ki0tLTIfffdJzfddNOkc0ZHR2V0dHRC5dvb26utkupChaRjk9RCIxRqUYPW5+Erh0vlubEaoVhxDbW+HzbyeF/yeJ08LJbQyi12uBEqFovS1NSUWIbVcNxTTz0lS5Yskcsuu0zmzJkjZ599tuzYsaP8+uDgoAwPD0tXV1f5d4VCQZYvXy579uyZssze3l5pbm4u/9g0QACA2mbVCL311luybds26ezslN/85jdy8803yx133CE///nPRURkeHhYRERaWlomnNfS0lJ+rdK6deukWCyWf4aGhrK8DwBADbKaExobG5MlS5ZIT0+PiIicffbZsn//ftm2bZtcd9115eOmGuKYrktYKBSkUCjY1nvaa9nQ6v667LfI4xi+bT2SXqvFIYas8vL5JAmxx8smnXpaWaGGCLXKdQmRE+tvWez9VlY9oblz58ppp5024XennnqqvPPOOyIi0traKiIyqdczMjIyqXcEAIBVI3T++efLgQMHJvzu4MGDMn/+fBER6ejokNbWVunr6yu/fujQIenv75elS5cqVBcAcEQxFl5++WVTX19vNm3aZN58803z6KOPmlmzZpmdO3eWj9m8ebNpbm42u3fvNgMDA+bKK680c+fONaVSqaprFItFIyKmWCyWfycimX7SJB2f9Zq+62hzbrXv1eVYFy73yec9n+46odi8d9tzk461+T641N/l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uXKlfPOb35zwe+7TF5566ilZsmSJXHbZZTJnzhw5++yzZceOHeXXuU9fWLZsmTz33HNy8OBBERF57bXX5KWXXpKLL75YRLhPWnIXRfuDDz6Qzz//XFpaWib8vqWlRYaHhyPVKj+MMbJ69WpZtmyZLFq0SESkfF+mumdvv/128DrG9Nhjj8mrr74qr7zyyqTXuE9feOutt2Tbtm2yevVq+cEPfiAvv/yy3HHHHVIoFOS6667jPv2/NWvWSLFYlIULF8qMGTPk888/l02bNsmVV14pIjxPWnLXCB1WV1c34d/GmEm/Oxrddttt8vrrr8tLL7006bWj/Z4NDQ3JqlWr5Nlnn5WZM2dOe9zRfp/GxsZkyZIl0tPTIyIiZ599tuzfv1+2bdsm1113Xfm4o/0+Pf7447Jz507ZtWuXnH766bJv3z7p7u6WtrY2uf7668vHHe33yVXuhuNOPPFEmTFjxqRez8jIyKT/cRxtbr/9dnnqqafkhRdemJCtsLW1VUTkqL9ne/fulZGREVm8eLHU19dLfX299Pf3ywMPPCD19fXle3G036e5c+fKaaedNuF3p556qrzzzjsiwvN02J133ilr166VK664Qs444wy59tpr5fvf/7709vaKCPdJS+4aoWOPPVYWL14sfX19E37f19cnS5cujVSruIwxctttt8nu3bvl+eefl46Ojgmvd3R0SGtr64R7dujQIenv7z+q7tmFF14oAwMDsm/fvvLPkiVL5Oqrr5Z9+/bJggULuE8icv75509a4n/w4EGZP3++iPA8HfbJJ59Mygo6Y8aM8hJt7pOSiIsipnV4ifbPfvYz88Ybb5ju7m5z3HHHmX/84x+xqxbF9773PdPc3Gx+97vfmffff7/888knn5SP2bx5s2lubja7d+82AwMD5sorr2SpqDETVscZw30y5ovl6/X19WbTpk3mzTffNI8++qiZNWuW2blzZ/kY7pMx119/vfnqV79aXqK9e/duc+KJJ5q77rqrfAz3yV0uGyFjjPnxj39s5s+fb4499ljzta99rbwc+WgkIlP+PPTQQ+VjxsbGzPr1601ra6spFArmggsuMAMDA/EqnROVjRD36QtPP/20WbRokSkUCmbhwoVm+/btE17nPhlTKpXMqlWrzLx588zMmTPNggULzN13321GR0fLx3Cf3JFPCAAQTe7mhAAARw8aIQBANDRCAIBoaIQAANHQCAEAoqERAgBEQyMEAIiGRggAEA2NEAAgGhohAEA0NEIAgGj+Dx+8XkkAqZWEAAAAAElFTkSuQmCC"/>
+</div>
 </div>
 </div>
 </div>
@@ -7561,290 +7826,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.cluster</span> <span class="kn">import</span> <span class="n">pair_confusion_matrix</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">pair_confusion_matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">C</span>
-<span class="n">TN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">FP</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">FN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">TP</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([[8, 0],
-       [2, 2]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Fowlkes%E2%80%93Mallows-Index-(FMI)">Fowlkes–Mallows Index (FMI)<a class="anchor-link" href="#Fowlkes%E2%80%93Mallows-Index-(FMI)">¶</a></h2><ul>
-<li>FMI, a measure for cluster similarity, is computed using the elements of $C$ as $FMI = \frac{TP}{\sqrt{(TP + FP) (TP + FN)}}$.</li>
-<li>FMI is useful because it gives a number—and not a matrix like the pair confusion matrix—for quickly comparing two clusterings.</li>
-<li>Check <a href="https://scikit-learn.org/stable/modules/clustering.html#fowlkes-mallows-scores">Scikit-learn docs</a> for more.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">FMI</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">))</span>
-<span class="n">FMI</span>
-
-<span class="c1"># You can also compute FMI using scikit-learn. The results match, of course.</span>
-<span class="n">metrics</span><span class="o">.</span><span class="n">fowlkes_mallows_score</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.7071067811865475</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>0.7071067811865476</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Also two same partitions will have no off-diagonal elements in the pair confusion matrix and a FMI score of 1.</span>
-
-<span class="n">C</span> <span class="o">=</span> <span class="n">pair_confusion_matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">C</span>
-<span class="n">TN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">FP</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">FN</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">TP</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="n">FMI</span> <span class="o">=</span> <span class="n">TP</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FP</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">TP</span> <span class="o">+</span> <span class="n">FN</span><span class="p">))</span>
-<span class="n">FMI</span>
-
-<span class="n">metrics</span><span class="o">.</span><span class="n">fowlkes_mallows_score</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>array([[8, 0],
-       [0, 4]])</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>1.0</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>1.0</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Problems-with-FMI-and-NMI">Problems with FMI and NMI<a class="anchor-link" href="#Problems-with-FMI-and-NMI">¶</a></h2><p>Gates et al. raised an objection against FMI and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.normalized_mutual_info_score.html">Normalized mutual information</a> in the following papers:</p>
-<ul>
-<li><p>Gates, A.J., Wood, I.B., Hetrick, W.P. et al. Element-centric clustering comparison unifies overlaps and hierarchy. Sci Rep 9, 8574 (2019). <a href="https://doi.org/10.1038/s41598-019-44892-y">https://doi.org/10.1038/s41598-019-44892-y</a></p>
-</li>
-<li><p>Gates et al., (2019). CluSim: a python package for calculating clustering similarity. Journal of Open Source Software, 4(35), 1264, <a href="https://doi.org/10.21105/joss.01264">https://doi.org/10.21105/joss.01264</a></p>
-</li>
-<li><p>One figure from their paper, reproduced below, summarizes the problem well. They also have a <a href="https://github.com/Hoosier-Clusters/clusim">GitHub repo</a> with their proposed index. Below you can find an example code that reproduces the numbers in the schematic.</p>
-</li>
-</ul>
-<p><img alt="" src="./assets/41598_2019_44892_Fig1_HTML.webp"/></p>
-<h3 id="Figure-by-Gates-et-al.-Scientific-Reports">Figure by <a href="https://doi.org/10.1038/s41598-019-44892-y">Gates et al. Scientific Reports</a><a class="anchor-link" href="#Figure-by-Gates-et-al.-Scientific-Reports">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-code-reproduces-the-numbers-in-the-schematic,-using-their-python-package.">The code reproduces the numbers in the schematic, using their python package.<a class="anchor-link" href="#The-code-reproduces-the-numbers-in-the-schematic,-using-their-python-package.">¶</a></h3><p>Their package can compute many indices. That's useful. Of course, the common scores (FMI, NMI etc.) matches if you compute with scikit-learn.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">clusim.clustering</span> <span class="kn">import</span> <span class="n">Clustering</span>
-<span class="kn">import</span> <span class="nn">clusim.sim</span> <span class="k">as</span> <span class="nn">sim</span>
-
-<span class="n">true_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">predicted_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">single_cluster_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">completely_fragmented_labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-
-<span class="c1"># their data is differently formatted.</span>
-<span class="n">true_clustering</span> <span class="o">=</span> <span class="n">Clustering</span><span class="p">()</span><span class="o">.</span><span class="n">from_membership_list</span><span class="p">(</span><span class="n">true_labels</span><span class="p">)</span>
-<span class="n">predicted_clustering</span> <span class="o">=</span> <span class="n">Clustering</span><span class="p">()</span><span class="o">.</span><span class="n">from_membership_list</span><span class="p">(</span><span class="n">predicted_labels</span><span class="p">)</span>
-<span class="n">predicted_single_cluster</span> <span class="o">=</span> <span class="n">Clustering</span><span class="p">()</span><span class="o">.</span><span class="n">from_membership_list</span><span class="p">(</span><span class="n">single_cluster_labels</span><span class="p">)</span>
-<span class="n">predicted_completely_fragmented</span> <span class="o">=</span> <span class="n">Clustering</span><span class="p">()</span><span class="o">.</span><span class="n">from_membership_list</span><span class="p">(</span>
-    <span class="n">completely_fragmented_labels</span>
-<span class="p">)</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span>
-    <span class="n">predicted_clustering</span><span class="p">,</span>
-    <span class="n">predicted_single_cluster</span><span class="p">,</span>
-    <span class="n">predicted_completely_fragmented</span><span class="p">,</span>
-<span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">"FMI = </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">fowlkes_mallows_index</span><span class="p">(</span><span class="n">true_clustering</span><span class="p">,</span><span class="n">_</span><span class="p">)</span><span class="si">}</span><span class="s2">, NMI = </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">nmi</span><span class="p">(</span><span class="n">true_clustering</span><span class="p">,</span><span class="n">_</span><span class="p">)</span><span class="si">}</span><span class="s2">, elem-cent = </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">element_sim</span><span class="p">(</span><span class="n">true_clustering</span><span class="p">,</span><span class="n">_</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>FMI = 0.4811252243246881, NMI = 0.5451600159416435, elem-cent = 0.5407407407407406
-FMI = 0.5, NMI = 0.0, elem-cent = 0.33333333333333326
-FMI = 0.0, NMI = 0.6666666666666665, elem-cent = 0.33333333333333326
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The package can compute many scores such as... (code from their documentation https://hoosier-clusters.github.io/clusim/html/clusim.html)</span>
-
-<span class="n">row_format2</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{:&gt;25}</span><span class="s2">"</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">simfunc</span> <span class="ow">in</span> <span class="n">sim</span><span class="o">.</span><span class="n">available_similarity_measures</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="n">row_format2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">simfunc</span><span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">"sim."</span> <span class="o">+</span> <span class="n">simfunc</span> <span class="o">+</span>
-                          <span class="s2">"(true_clustering, predicted_clustering)"</span><span class="p">)</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>            jaccard_index                   0.3125
-               rand_index       0.6944444444444444
-            adjrand_index      0.26666666666666655
-    fowlkes_mallows_index       0.4811252243246881
-                 fmeasure      0.47619047619047616
-             purity_index       0.7777777777777777
-     classification_error      0.22222222222222232
-        czekanowski_index      0.47619047619047616
-               dice_index      0.47619047619047616
-           sorensen_index      0.47619047619047616
-    rogers_tanimoto_index       0.5319148936170213
-          southwood_index      0.45454545454545453
-      pearson_correlation      0.00102880658436214
-         corrected_chance       0.1700141878595447
-      sample_expected_sim      0.16666666666666666
-                      nmi       0.5451600159416435
-                       mi       0.8233232815796736
-                   adj_mi       0.3410389011275906
-                      rmi       0.1464053299155769
-                       vi       1.3738364418444755
-       geometric_accuracy       0.7777777777777778
-          overlap_quality                     -0.0
-                     onmi       0.6303315236619905
-              omega_index      0.26666666666666655
-</pre>
 </div>
 </div>
 </div>
