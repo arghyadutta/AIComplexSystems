@@ -9,7 +9,7 @@
 
 A list of references (papers, book chapters, videos,…)—please read/watch them. While they may not be essential for exams, they are informative, well-written, and persuasive.
 
-- [AI/ML]https://arghyadutta.github.io/notebooks/ai.html
+- [AI/ML](https://arghyadutta.github.io/notebooks/ai.html)
 - [complex systems](https://arghyadutta.github.io/notebooks/complexity.html)
 
 ## Code repositories I borrowed from:
