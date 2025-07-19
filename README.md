@@ -5,11 +5,12 @@
 - **Introduction to Machine Learning with Python: A Guide for Data Scientists**, Müller and Guido (Available in the SRM AP library)
 - [An Introduction to Statistical Learning](https://www.statlearning.com/) by by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, Jonathan Taylor. (Excellent **free** book, a bit more difficult then Müller's)
 
-## Reading list 
+## Reading materials 
 
-I am making a list of references (papers, book chapters, videos,…)—please read/watch them. While they may not be essential for exams, they are informative, well-written, and persuasive.
+A list of references (papers, book chapters, videos,…)—please read/watch them. While they may not be essential for exams, they are informative, well-written, and persuasive.
 
-- [Reading materials](https://arghyadutta.github.io/teaching/AIComplex.html)
+- [AI/ML]https://arghyadutta.github.io/notebooks/ai.html
+- [complex systems](https://arghyadutta.github.io/notebooks/complexity.html)
 
 ## Code repositories I borrowed from:
 
